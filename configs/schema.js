@@ -1,7 +1,7 @@
 
 import { integer, json, pgTable, serial, varchar } from "drizzle-orm/pg-core";
 
-export const CarListing=pgTable('carLisiting',{
+export const CarListing=pgTable('carListing',{
     id:serial('id').primaryKey(),
     listingTitle:varchar('listingTitle'),
     tagline:varchar('tagline'),

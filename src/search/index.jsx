@@ -25,10 +25,13 @@ function SearchByOptions() {
         .innerJoin(CarImages,eq(CarListing.id,CarImages.carListingId))
         .where(condition!=undefined&&eq(CarListing.condition,condition))
         .where(make!=undefined&&eq(CarListing.make,make))
-
+        // const listings = await db.select().from(CarListing);
+        //  console.log(listings);
+        // console.log(result);
         const resp=Service.FormatResult(result);
         console.log(resp);
         setCarList(resp);
+    //    console.log(carList);
     }
 
 
@@ -50,7 +53,7 @@ function SearchByOptions() {
                     </div>
                 )):
                 [1,2,3,4,5,6].map((item,index)=>(
-                    <div className='h-[320px] rounded-xl bg-slate-200 animate-pulse'>
+                    <div key={index} className='h-[320px] rounded-xl bg-slate-200 animate-pulse'>
                     </div>
                 ))
                 }
